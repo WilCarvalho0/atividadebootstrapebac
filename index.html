@@ -29,18 +29,36 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
-        @media screen and (max-width: 767px) {
-            .col-sm-4 {
-                flex-basis: 100%;
-                max-width: 100%;
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        @media screen and (min-width: 375px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); 
             }
         }
-    
-        @media screen and (min-width: 768px) and (max-width: 991px) {
-            .col-sm-4 {
-                flex-basis: 50%;
-                max-width: 50%;
+
+        
+        @media screen and (max-width: 1023px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
             }
+        }
+
+        
+        @media screen and (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; 
+            }
+        }
+
+        
+        .grid-item {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
         }
 
     </style>
@@ -118,7 +136,7 @@
         <body>
             <div class="container" >
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-lg-6 col-md-12 col-lg-6 col-md-6">
         <article class="card" >
         <header class="card-header">
            O Principe Moderno 
@@ -137,7 +155,7 @@
             </footer>
         </article>
                 </div>
-                       <div class="col-4">
+                       <div class="col-lg-6 col-md-12 col-lg-6 col-md-6">
         <div class="card text-bg-dark">
             <img src="https://www.saudeemdia.com.br/wp-content/uploads/2023/06/Lula-100x100.jpg" />
             <div class="card-img-overlay" >
@@ -150,7 +168,7 @@
             </div>
                     </div>
                 </div>
-                       <div class="col-4">
+                       <div class="col-lg-6 col-md-12 col-lg-6 col-md-6">
         <div class="card text-bg-dark" >
         <div class="card-header">
             Partido dos Trabalhadores
@@ -171,52 +189,22 @@
             </div>
         </div>
     </section>
-    <section id="noticias">
-        <h2>Principais notícias</h2>
-        <div class="container">
-            <nav class="nav nav-pills">
-                <button data-bs-toggle="tab" data-bs-target="#aba1" class="nav-link active" type="button" >STF</button>
-                <button data-bs-toggle="tab" data-bs-target="#aba2" class="nav-link"  type="button" >Senado</button>
-                <button data-bs-toggle="tab" data-bs-target="#aba3" class="nav-link"  type="button" >Jornais</button>
-            </nav>
-            <div class="tab-content" >
-                <div class="tab-pane active" id="aba1">
-                    News STF:
-                </div>
-                <div class="tab-pane" id="aba2">
-                    News Senado:
-                </div>
-                <div class="tab-pane" id="aba3">
-                    News Jornais:
-                </div>
-            </div>
-        </div>
+    <div>
         
-    </section>
-    <section id="politica">
-        <h2>Política</h2>
-    </section>
-    <section id="bolsa">
-        <h2>Bolsa de Valores</h2>
-    </section>
-</div>
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div class="toast" id="mensagens-alerta">
-        <header class="toast-header">
-            <strong>AVISO!</strong>
-        </header>
-        <div class="toast-body">
-            Pessoas vivem, pensam e falam de forma diferente e a sua opinião é apenas uma no meio da multidão. Partindo desse princípio, adquira conhecimento.
-            <div class="mt-4 pt-4 border-top">
-                <button data-bs-dismiss="toast" class="btn btn-danger" type="button">
-                    Descartar
-                </button>
-               
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="mensagens-alerta">
+            <header class="toast-header">
+                <strong>AVISO!</strong>
+            </header>
+            <div class="toast-body">
+                Pessoas vivem, pensam e falam de forma diferente e a sua opinião é apenas uma no meio da multidão. Partindo desse princípio, adquira conhecimento.
+                <div class="mt-4 pt-4 border-top">
+                    <button data-bs-dismiss="toast" class="btn btn-danger" type="button">Descartar</button>
+                </div>
             </div>
         </div>
-
     </div>
-</div>
+    
 
     <script src="lib/bootstrap.bundle.min.js" ></script>
     <script>
